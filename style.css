@@ -376,6 +376,10 @@ main{
 
 }
 
+#smaller{
+    width: fit-content;
+}
+
 .comment--highlight{
     display: flex;
     flex-flow: row nowrap;
