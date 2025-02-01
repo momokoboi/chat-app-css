@@ -98,8 +98,9 @@ main{
 
 @media screen and (max-width: 850px) {
 
-    body{
+    body, html{
         overflow-y: auto;
+        overflow-x: hidden;
         height: auto;
     }
 
@@ -123,6 +124,8 @@ main{
         flex-flow: column nowrap;
         align-items: center;
         justify-content: center;
+
+        overflow-x: hidden;
     }
 
     #phone{
