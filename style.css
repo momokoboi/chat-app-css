@@ -1,0 +1,516 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root{
+    /* #### Text */
+
+    /* (sub-heading at the top of the app UI) */
+    --Pale-Violet: hsl(276, 100%, 81%);
+    /* (chat on the left) */
+    --Moderate-Violet: hsl(276, 55%, 52%);
+    /*  (chat on the right) */
+    --Desaturated-Dark-Violet: hsl(271, 15%, 43%);
+    /* (placeholder text) */
+    --Grayish-Blue: hsl(206, 6%, 79%);
+    /*  (main heading) */
+    --Very-Dark-Desaturated-Violet: hsl(271, 36%, 24%);
+    /*  (paragraph) */
+    --Dark-Grayish-Violet: hsl(270, 7%, 64%);
+
+    /* #### Gradients */
+
+    /* These two colors are the vibrant background colors you see throughout the design and are applied as a linear gradient: */
+
+    --Light-Magenta: hsl(293, 100%, 63%);
+    --Light-Violet: hsl(264, 100%, 61%);
+
+    /* ### Secondary */
+
+    --White: hsl(0, 0%, 100%);
+    /* (app background) */
+    --Light-Grayish-Violet: hsl(270, 20%, 96%);
+    /* (submit button background) */
+    --Very-Dark-Desaturated-Violet: hsl(271, 36%, 24%);
+    /*  (radio button outline) */
+    --Very-Light-Magenta: hsl(289, 100%, 72%);
+
+    /*default font */
+    --Default-Font: "Rubik", serif;
+}
+
+/* css reset */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    height: 100vh;
+    overflow: hidden;
+
+    position: relative;
+
+    font-family: var(--Default-Font);
+}
+
+/* background elements */
+.background{
+    position: absolute;
+    background-color: teal;
+    width: 34.6vw;
+    height: 85vh;
+
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+
+    z-index: -9999;
+}
+
+.background-left{
+    top: 0px;
+    left: -100px;
+
+    background-color: var(--Light-Violet);
+}
+
+.background-right{
+    bottom: 0px;
+    right: -100px;
+
+    transform: rotate(180deg);
+
+    background-color: var(--Light-Grayish-Violet);
+}
+
+/* main & phone */
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    gap: 120px;
+}
+
+@media screen and (max-width: 850px) {
+
+    body{
+        overflow-y: auto;
+        height: auto;
+    }
+
+    .background{
+        width: 95vw;
+        height: 80vh;
+
+        border-bottom-left-radius: 0%;
+    }
+
+    .background-left{
+        left: -200px;
+    }
+
+    .background-right{
+        right: -200px;
+    }
+
+    main{
+        height: auto;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #phone{
+        margin-top: 100px;
+    }
+
+    #infos{
+        text-align: center;
+
+        padding-bottom: 200px;
+        align-items: center;
+    }
+
+    #infos p{
+        width: 30ch;
+    }
+    
+}
+
+
+#phone{
+    background-color: var(--White);
+    width: 300px;
+    height: 600px;
+
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.132), -4px 4px 20px rgba(0, 0, 0, 0.137);
+
+    border-radius: 40px;
+
+    position: relative;
+}
+
+/* white-space */
+
+#white_space{
+    position: absolute;
+
+    background-color: var(--White);
+
+    width: 50%;
+    height: 45px;
+
+    left: 50%;
+    transform: translate(-50%);
+
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+/* innerphone */
+#innerphone{
+    background-color: var(--Light-Grayish-Violet);
+    margin:20px;
+    border-radius: 20px;
+
+    height: 560px;
+}
+
+/* header */
+#phone_header{
+    background-image: linear-gradient(to right, var(--Light-Violet), var(--Light-Magenta));
+    border-radius: 20px 20px 8px 8px;
+
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.121);
+
+    color: white;
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    height: 15%;
+
+}
+
+/* left icon */
+#left_icon{
+    aspect-ratio: 1;
+    width: 40px;
+
+    position: relative;
+
+    margin-bottom: 10px;
+}
+
+.component{
+    position: absolute;
+    background-color: var(--White);
+
+    aspect-ratio: 3.3 / 1;
+    width: 10px;
+
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+
+    right: 10px;
+}
+.component1{
+    top: 16px;
+    transform: rotate(-60deg);
+    border-bottom-right-radius: 99%;
+}
+
+.component2{
+    top: 22px;
+    transform: rotate(60deg);
+    border-bottom-left-radius: 99%;
+}
+
+/* contact (center) */
+#contact{
+    display: flex;
+    flex-flow: row nowrap;
+
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-bottom: 10px;
+
+}
+
+#contact img{
+    aspect-ratio: 1;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--White);
+}
+
+#contact_info{
+    display: flex;
+    flex-flow: column nowrap;
+
+    gap: 3px;
+}
+
+#contact_info h2{
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+#contact_info p{
+    font-weight: 400;
+    font-size: 0.6rem;
+    font-weight: 500;
+
+    color: var(--Pale-Violet);
+}
+
+/* right icon */
+#right_icon{
+    aspect-ratio: 1;
+    width: 40px;
+
+    margin-left: auto;
+
+    position: relative;
+
+    margin-bottom: 10px;
+
+}
+
+.square{
+    position: absolute;
+    aspect-ratio: 1;
+    width: 4px;
+    background-color: white;
+
+    left: 5px;
+
+    border-radius: 1px;
+}
+
+.square1{
+    top: 11.2px;
+}
+
+.square2{
+    top: 18px
+}
+
+.square3{
+    top: 25px;
+}
+
+/* content */
+#pictures{
+    display: flex;
+    gap: 12px;
+
+    align-self: flex-end;
+
+    margin: 0px 10px;
+
+    
+}
+
+#pictures img{
+    aspect-ratio: 1;
+    width: 55px;
+    border-radius: 15px;
+
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.156);
+
+}
+
+#infos{
+    width: 48ch;
+}
+
+/* textzone */
+#text_zone{
+    display: flex;
+    flex-flow: column nowrap;
+
+    margin-top: 20px;
+    gap: 10px;
+
+}
+
+/* comments */
+.comment{
+    font-size: 0.6rem;
+    font-weight: 500;
+    width: 23.5ch;
+
+    padding: 7px;
+
+    margin: 0px 10px;
+
+    border-radius: 10px 10px 10px 3px;
+
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.156);
+
+}
+
+.comment--left{
+    background-color: var(--Dark-Grayish-Violet);
+    color: var(--Moderate-Violet);
+}
+
+.comment--right{
+    background-color: var(--White);
+    color: var(--Desaturated-Dark-Violet);
+
+    align-self: flex-end;
+
+    border-radius: 10px 10px 3px 10px;
+
+}
+
+.comment--highlight{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    background-image: linear-gradient(to right,var(--Light-Magenta), var(--Light-Violet));
+
+    padding: 10px 15px;
+
+    color: var(--White);
+
+    width: 30ch;
+
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.circle_holder{
+    position: relative;
+    aspect-ratio: 1;
+    width: 20px;
+    height: 20px;
+
+}
+
+
+.comment--highlight .circle{
+
+    border: 0.01rem solid var(--White);    
+    aspect-ratio: 1;
+    width: 20px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+
+.comment--highlight p {
+    font-weight: 300;
+}
+
+.comment--highlight .price{
+    font-size: 1rem;
+    font-weight: 600;
+
+    margin-left: auto;
+}
+
+/* input field */
+
+#inputfield{
+    background-color: var(--White);
+    display: flex;
+    justify-content: space-around;
+    height: 45px;
+
+    width: 90%;
+    margin-top: 10px;
+
+    border-radius: 60px;
+
+    margin: 15px auto 0px auto;
+
+    align-items: center;
+}
+
+#inputfield p{
+    color: var(--Grayish-Blue);
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+/* button styling */
+#inputfield button{
+    all: unset;
+
+
+    background-color: var(--Very-Dark-Desaturated-Violet);
+    aspect-ratio: 1;
+    height: 70%;
+    border-radius: 50%;
+
+    margin-left: 55px;
+
+    position: relative;
+
+    cursor: pointer;
+}
+
+.line{
+    position: absolute;
+    background-color: var(--White);
+
+    aspect-ratio: 3.3 / 1;
+    width: 10px;
+
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+         
+    right: 10px;
+}
+
+.line1{
+    top: 16.45px;
+    transform: rotate(140deg);
+    border-bottom-right-radius: 99%;
+}
+
+.line2{
+    top: 12px;
+    transform: rotate(-140deg);
+    border-bottom-right-radius: 99%;
+}
+
+/* last */
+#infos{
+    width: 45ch;
+    display: flex;
+
+    flex-flow: column nowrap;
+    gap: 20px;
+}
+
+#infos h1{
+    color: var(--Very-Dark-Desaturated-Violet);
+    font-weight: 460;
+    font-size: 2.5rem;
+}
+
+#infos p {
+    line-height: 1.5rem;
+    color: var(--Dark-Grayish-Violet);
+}
